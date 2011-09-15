@@ -1,0 +1,50 @@
+Weld-Rails
+==========
+
+Weld-rails allows rails to use weld as a template handler.
+
+Weld-rails is currently alpha and should not be used in production.
+
+DESCRIPTION
+===========
+
+Currently, it can successfully compile a simple weld template using weld.js, jsdom (and it's dependencies), and Node (through ExecJS).
+
+
+USAGE
+=====
+
+
+app/views/test/index.html.weld
+
+    <ol>
+      <li class="person">
+        <span class="name">John Doe</span>
+        <span class="title">Groundskeeper</span>
+      </li>
+    </ol>
+
+app/views/test/index.rb
+
+    class Views::Test < Weld::View
+      def index
+        {
+          person: @people.collect { |person|
+            { name: person.name, title: person.title }
+          }
+        }
+      end
+    end
+
+Will render something like:
+
+    <ol>
+      <li class="person">
+        <span class="name">John Doe</span>
+        <span class="title">Gardener</span>
+      </li>
+      <li class="person">
+        <span class="name">James Smith</span>
+        <span class="title">Landscaper</span>
+      </li>
+    </ol>
