@@ -6,10 +6,13 @@ Gem::Specification.new do |s|
   s.name        = "weld-rails"
   s.version     = Weld::Rails::VERSION
   s.authors     = ["Amiel Martin"]
-  s.email       = ["amiel.martin@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.email       = ["amiel@carnesmedia.com"]
+  s.homepage    = "http://github.com/amiel/weld-rails"
+  s.summary     = %q{Weld-rails allows rails to use weld as a template handler.}
+  s.description = <<-DESCRIPTION
+    Weld-rails is currently alpha and should not be used in production.
+    Currently, it can successfully compile a simple weld template using weld.js, jsdom (and it's dependencies), and Node (through ExecJS).
+  DESCRIPTION
 
   s.rubyforge_project = "weld-rails"
 
@@ -20,5 +23,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_runtime_dependency "execjs"
 end
