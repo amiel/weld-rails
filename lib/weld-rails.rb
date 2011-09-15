@@ -1,7 +1,4 @@
-require "weld-rails/version"
+require "weld/version"
 
-module Weld
-  module Rails
-    # Your code goes here...
-  end
-end
+ActionView::Template.register_template_handler(:weld, Weld::Handler)
+
