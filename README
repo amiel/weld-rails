@@ -36,6 +36,13 @@ app/views/test/index.rb
       end
     end
 
+app/controllers/test_controller.rb
+    class TestController < ApplicationController
+      def index
+        @people = Person.all
+      end
+    end
+
 Will render something like:
 
     <ol>
